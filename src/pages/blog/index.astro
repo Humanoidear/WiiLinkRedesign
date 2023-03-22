@@ -1,0 +1,193 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import '../../styles/global.css';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<body>
+	<Header />
+	<main>
+		<section>
+			{
+				posts.map((post) => (
+					<div class="mainpost">
+						<a href={`/blog/${post.slug}/`}>
+						<div class="fade"></div>
+						<img style="filter:blur(8px) opacity(0.6);" src={post.data.heroImage} width="200px">
+						<FormattedDate date={post.data.pubDate} />
+						<div class="maintitle">{post.data.title}</div>
+						<div class="maindesc">{post.data.description}</div>
+						</a>
+					</div>
+				))
+			}
+
+			<div class="postholder">
+				{
+					posts.map((post) => (
+						<div class="post">
+							<a href={`/blog/${post.slug}/`}>
+							<div class="fade"></div>
+							<img src={post.data.heroImage} width="200px">
+							<FormattedDate date={post.data.pubDate} />
+							<div class="title">{post.data.title}</div>
+							<div class="desc">{post.data.description}</div>
+							</a>
+						</div>
+					))
+				}
+			</div>
+		</section>
+	</main>
+
+</body>
+
+
+<style>
+
+	.mainpost{
+		display: none;
+		width:100%;
+		height:50%;
+		top:0;
+		left:0;
+		position: absolute;
+		overflow:hidden;
+	}
+
+	.mainpost:nth-child(1){
+		display: block;
+	}
+
+	.postholder{
+		width:80%;
+		display: grid;
+		grid-template-columns:repeat(auto-fit, minmax(600px, 1fr));
+		position: absolute;
+		gap: 20px;
+		top:45%;
+		left:50%;
+		transform: translate(-50%,0);
+		background-color: #181818;
+		z-index: 10;
+	}
+	.post{
+		position: relative;
+    	height:250px;
+    	width:100%;
+ 		background-color:rgba(255, 255, 255, 0.041);
+    	border-radius: 15px;
+		font-family: Gilroy;
+    	hyphens:auto;
+    	overflow: hidden;
+    	border: 3px solid rgba(255, 255, 255, 0.066);
+    	transition: 0.5s;
+	}
+
+	.post:hover{
+    	background-color:rgba(206, 206, 206, 0.117);
+    	transform: translate(0,-5px);
+    	box-shadow: 0px 0px 70px rgb(43, 43, 43);
+    	transition: 0.5s;
+  	}
+
+  .post:hover img{
+	filter: blur(8px) brightness(0.7);
+	z-index:0;
+	transition: 0.5s;
+  	}
+
+	img{
+
+		width: 100%;
+		left:0;
+		z-index: 0;
+		transition: 0.5s;
+	}
+
+	.maintitle{
+		position: absolute;
+		z-index: 11;
+		font-size: 60px;
+		top:40%;
+		text-align: center;
+		left: 50%;
+		transform: translate(-50%,0);
+		font-family: Gilroy;
+		transition: 0.5s;
+	}
+
+	.maindesc{
+		position: absolute;
+		z-index: 11;
+		font-size: 30px;
+		top:53%;
+		text-align: center;
+		left: 50%;
+		transform: translate(-50%,0);
+		font-family: Gilroy;
+		transition: 0.5s;
+	}
+
+	.title{
+		position: absolute;
+		z-index: 11;
+		font-size: 30px;
+		bottom:20px;
+		left:20px;
+		font-family: Gilroy;
+		transition: 0.5s;
+	}
+
+	.post:hover .title{
+		transform: translate(0, -50px);
+		transition: 0.5s;
+	}
+
+	.desc{
+		position: absolute;
+		font-family: Cafe;
+		font-size: 20px;
+		left:20px;
+		bottom:0;
+		transform:translate(0,50px);
+		transition: 0.5s;
+	}
+
+	.post:hover .desc{
+		transform: translate(0, -40px);
+		transition: 0.5s;
+	}
+
+	.fade{
+		width:100%;
+		height:60%;
+
+		background: linear-gradient(0deg, rgba(24,24,24,1) 0%, rgba(0,212,255,0) 100%);
+		position: absolute;
+		z-index:2;
+		bottom:0;
+		left:0;
+		transition: 0.5s;
+	}
+
+	.post:hover .fade{
+		transform: translate(0, 50px);
+		transition: 0.5s;
+	}
+
+	a{
+		bottom:50px;
+		z-index:11;
+		color:white;
+	}
+</style>
+

@@ -1,0 +1,409 @@
+<div class="scrollers">
+    <div class="fadeout"></div>
+    <div class="scroller-one">
+        <div class="ticker1">
+            <div class="recom1">
+                <img class="headimg" src=" ./Images/wiinomabg.webp" width="100%" height="490px">
+                <div class="nameinfo"><h2 id="headname">Wii Room</h2></div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src="./Images/wiispeakbg.jpg" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Wii Speak</h2>
+                </div>
+            </div>
+        </div>
+        <div class="ticker2">
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/weatherchannelbg.jpg" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Weather Channel</h2>
+                </div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/newschannel.jpg" style="opacity: 0.7;" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">News Channel</h2>
+                </div>
+            </div>
+        </div>
+        <div class="ticker1-temp">
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/tvnotomobg.png" style="opacity: 0.7;" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">TV no Tomo</h2>
+                </div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/everybodyvotesbg.jpg" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Everybody Votes Channel</h2>
+                </div>
+         
+            </div>
+        </div>
+    </div>
+    <div class="scroller-two">
+        <div class="ticker3">
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/newschannel.jpg" style="opacity: 0.7;" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">News Channel</h2>
+                </div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/digicambg.webp" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Digicam Print Channel</h2>
+                </div>
+            </div>
+        </div>
+        <div class="ticker3-temp">
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/damaechannelbg.png" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Food Channel</h2>
+                </div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/weatherchannelbg.jpg" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Weather Channel</h2>
+                </div>
+            </div>
+        </div>
+        <div class="ticker4">
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/damaechannelbg.png" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Food Channel</h2>
+                </div>
+            </div>
+            <div class="recom1">
+                <div class="headimg">
+                    <img class="headimg" src=" ./Images/digicambg.webp" width="100%" height="490px">
+                </div>
+                <div class="nameinfo">
+                    <h2 id="headname">Digicam Print Channel</h2>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <style>
+            /* Interactive imagescrollers caroussel*/
+   
+    ::-webkit-scrollbar {
+        width: 0px;
+      }
+
+    .fadeout{
+        width:350px;
+        height:100%;
+        position:absolute;
+        top:bottom;
+        top:0;
+        left:0;
+        z-index:100000000;
+        position:fixed;
+        rotate: 180deg;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, #181818 70%);
+        filter: brightness(200%);
+    }
+
+   .scrollers{
+    width:78%;
+    height:100%;
+    filter: brightness(50%);
+    margin-left:20px;
+    margin-right:20px;
+    right:0;
+    top:53%;
+    transform:translate(20px,-50%);
+    position:fixed;
+    overflow:hidden;
+    transform:scale(200vh);
+    opacity: 0.3;
+    z-index:0;
+   }
+
+   .scroller-one{
+    width:100%;
+    height:30%;
+    top:16%;
+    left:10px;
+    position:absolute;
+   }
+
+   .scroller-two{
+    width:100%;
+    height:30%;
+    top:48%;
+    position:absolute;
+   }
+
+   .ticker1-temp{
+    width:50%;
+    height:100%;
+    top:0;
+    position:absolute;
+    animation-name:uptemp;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+   }
+
+   .ticker1{
+    width:50%;
+    height:100%;
+    left:100%;
+    position:absolute;
+    animation-name:up;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 20px;
+    opacity: 0;
+   }
+
+   .ticker2{
+    width:50%;
+    height:100%;
+    left:100%;
+    position:absolute;
+    animation-name:up2;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay:20s;
+   }
+
+   .ticker3{
+    width:50%;
+    height:100%;
+    top:0;
+    position:absolute;
+    animation-name:down;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+   }
+
+   .ticker3-temp{
+    width:50%;
+    height:100%;
+    top:0;
+    position:absolute;
+    animation-name:downtemp;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+   }
+
+   .ticker4{
+    width:50%;
+    height:100%;
+    top:0;
+    position:absolute;
+    animation-name:down2;
+    opacity:0;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay:20s;
+   }
+
+   .recom1{
+    width:98%;
+    top:1%;
+    position:absolute;
+    height:100%;
+    box-sizing: border-box;
+    border-radius:20px;
+    margin-bottom:15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 71px -14px rgb(89, 89, 89);
+    transition:1s;
+   }
+
+   .recom1:nth-child(1){
+    width:98%;
+    height:100%;
+    left:100%;
+    position:absolute;
+    box-sizing: border-box;
+    border-radius:20px;
+    margin-bottom:15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 30px rgb(255, 255, 255);   box-shadow: 0px 0px 71px -14px rgb(89, 89, 89);    transition:1s;
+   }
+
+   .recom1:before {
+    content: " ";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 8px solid white;
+    border-radius:18px;
+    z-index:100000;
+  }
+
+   .nameinfo{
+    height:100%;
+    width:100%;
+    position: absolute;
+   }
+
+   #headname{
+    position: absolute;
+    left:30px;
+    top:-105px;
+    font-size:40px;
+   }
+
+   #headinfo{
+    position: absolute;
+    left:30px;
+    top:-100px;
+    font-size:25px;
+    width:85%;
+    font-family: ginto;
+    color:white;
+    margin-right:150px;
+    overflow:hidden;
+    height:50px;
+   }
+
+   .headimg{
+    object-fit: cover;
+    filter: blur(4px) brightness(100%);
+   transform:scale(130%);
+   height:100%;
+   width:100%;
+   z-index:0;
+   }
+
+
+      @keyframes gradient {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+
+        100%{
+            filter: hue-rotate(360deg);
+        }
+      }
+
+
+@keyframes fadeforward{
+    0%{
+        transform: translate(-50%,-50%) scale(100%);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(150%);
+        opacity:0;
+        z-index:0;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+        z-index:0;
+    }
+}
+
+@keyframes uptemp{
+    0% {
+        left:0%;
+    }
+
+    100%{
+        left:-100%;
+    }
+   }
+   
+   @keyframes up{
+    0% {
+        left:100%;
+        opacity: 1;
+    }
+
+    100%{
+        left:-100%;
+        opacity: 1;
+    }
+   }
+
+   @keyframes up2{
+    0% {
+        left:100%;
+    }
+
+    100%{
+        left:-100%;
+    }
+   }
+
+
+   @keyframes down{
+    0% {
+        left:-100%;
+    }
+
+    100%{
+        left:100%;
+    }
+   }
+
+
+   @keyframes downtemp{
+    0% {
+        left:0%;
+    }
+
+    100%{
+        left:100%;
+    }
+   }
+
+   @keyframes down2{
+    0% {
+        opacity:1;
+        left:-100%;
+    }
+
+    100%{
+        opacity:1;
+        left:100%;
+    }
+   }
+
+    </style>

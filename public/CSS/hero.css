@@ -1,0 +1,121 @@
+.hero{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: absolute;
+}
+
+.herofade{
+    width:60%;
+    height:100%;
+    top:0;
+    left:0;
+    background:linear-gradient(270deg, rgba(27,143,161,0) 0%, rgba(24,24,24,1) 70%);
+    z-index: 1;
+    position: fixed;
+}
+
+.herologoholder{
+    width:450px;
+    height:100%;
+    top:0;
+    left:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.herologo{
+    height:300px;
+    width:100%;
+    top:45%;
+    transform: translate(0,-50%);
+    position: absolute;
+}
+
+.logo{
+    top:0;
+    left:0;
+    position: relative;
+    z-index: 1;
+}
+
+.tagline{
+    position: relative;
+    top:-80px;
+    left:10px;
+}
+
+.heroinstallholder{
+    width:400px;
+    height:100%;
+    right:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.heroinstall{
+    width:90%;
+    top:50%;
+    transform: translate(0,-50%);
+    position: absolute;
+    background-color:#ffffff15;
+    backdrop-filter: blur(4px);
+    padding-left:30px;
+    padding-top:0px;
+    height:70px;
+    border-radius: 18px;
+    border:4px solid #ffffff;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.installbg{
+    width:100%;
+    height:100%;
+    left:-100%;
+    top:0;
+    border-radius: 14px;
+    position: absolute;
+    background-color:#01CB2B;
+    z-index: 0;
+    animation-timing-function: linear;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installbg{
+    left:0;
+    transition: 0.5s;
+}
+
+.installtext{
+    transform: translate(0px,0);
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installtext{
+    transform: translate(40px,0);
+    transition: 0.5s;
+}
+
+.installarrow{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installarrow{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.heroinstall:hover{
+    border: 4px solid #01912B;
+    transition: 0.5s;
+}
+
+.readdocs{
+    font-size: 20px;
+    top:53%;
+    right:10px;
+    position: absolute;
+}

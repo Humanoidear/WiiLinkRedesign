@@ -1,0 +1,232 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Caroussel from '../components/Caroussel.astro';
+import Services from '../components/Services.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/x-icon" href=" ./Images/Favicon.png">
+        <title>Wii Link | A new online service for the Wii.</title>
+        <meta name="description" content="WiiLink resurrects many region exclusive channels — including channels released only in Japan.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href=" ./CSS/hero.css">
+        <link rel="stylesheet" href=" ./CSS/collapsible.css">
+        <link rel="stylesheet" href=" ./CSS/media.css">
+    </head>
+    <body>
+        <div class="hero">
+
+            <div class="herologoholder">
+                <div class="herologo">
+                    <h1 class="logo"><b style="font-family:RubikBold;">Wii</b>Link</h1>
+                    <h2 class="tagline">A new online service for the Wii.</h2>
+                </div>
+            </div>
+
+            <div class="heroinstallholder">
+                <div class="heroinstall">
+                    <h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">Install it now</h2>
+                    <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
+                    <div class="installbg"></div>
+                </div>
+                <h3 class="readdocs"><u>Check out the guide</u></h3>
+            </div>
+
+			<Caroussel />
+          
+            </div>
+            <div class="first"><img src=" ./Images/downarrow.png" width="40px"></div>
+
+
+        <r class="bannerholder">
+            <div class="banner"><img src=" ./Images/home.png" width="60px"><div class="bannername">Home</div></div>
+            <div class="banner"><img src=" ./Images/news.png" width="60px"><div class="bannername">News</div></div>
+            <div class="banner"><img src=" ./Images/guide.png" width="60px"><div class="bannername">Guide</div></div>
+            <div class="banner"><img src=" ./Images/services.png" width="60px"><div class="bannername">Services</div></div>
+            <div class="banner"><img src=" ./Images/status.png" width="60px"><div class="bannername">Status</div></div>
+            <div class="banner"><img src=" ./Images/faq.png" width="60px"><div class="bannername">FAQ</div></div>
+            <div class="banner"><img src=" ./Images/donators.png" width="60px"><div class="bannername">Donators</div></div>
+        </r>
+
+        <t class="fade"></t>
+
+        <div class="contentholder">
+            <div class="polka-dot"></div>
+			
+            <h2 class="contentslogan"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
+            
+			<Services />
+
+            <div class="bg">
+            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative;"><d style="font-family: Gilroy;"> Quick FAQ</d></h2>
+
+            <div class="collapsibles">
+                <button type="button" class="collapsible">Why WiiLink?</button>
+                    <div class="content">
+                        <p>WiiLink is the only service to bring back Japanese exclusive Wii channels after they were officially shut down. We've made Wii no Ma, the Demae Channel, and Digicam Print Channel functional once more. With our service, you can experience all of these once more on your Nintendo Wii - possibly for the first time.</p>
+                    </div>
+
+                    <button type="button" class="collapsible">Why does WiiLink exist?</button>
+                    <div class="content">
+                        <p>Without a replacement service for these channels, they would be lost to time, never to be seen again. However, thanks to our work, future generations of players can experience these channels again!</p>
+                    </div>
+
+                    <button type="button" class="collapsible">Is using WiiLink legal?</button>
+                    <div class="content">
+                        <p>Absolutely. We develop all of our channels without copyrighted code and material, and rely solely on what is provided within the channel and public knowledge. All code is written from the ground up. You will have no legal trouble from using our service.</p>
+                    </div>
+
+                    <button type="button" class="collapsible">Can the Demae Channel order real food?</button>
+                    <div class="content">
+                        <p>Yes!</p>
+                    </div>
+                    <h3 style="text-align: center; top:20px; position: relative;">Any other questions? If so, be sure to read our full FAQ!</h3>
+            </div>
+        </div>
+
+            <h2 class="fa-solid fa-clapperboard contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Promotional Video</d></h2>
+            <div class="promotionalvideo"><iframe class="ytvid" width="560" height="760" src="https://www.youtube-nocookie.com/embed/Y8gSqBd4oT0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
+			<Footer />
+    </body>
+
+    <script>
+        window.addEventListener("scroll", function() {
+    var r = document.querySelector("r");
+    r.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+        <script>
+            window.addEventListener("scroll", function() {
+        var t = document.querySelector("t");
+        t.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
+    <script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+    </script>
+
+</html>
+
+<style>
+	
+.first{
+    width:100px;
+    height:100px;
+    position: absolute;
+    bottom:0px;
+    left:8%;
+    animation-name: downup;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes downup {
+    0%{
+        transform: translate(0, -20px);
+    }
+    50%{
+        transform: translate(0,0px);
+    }
+    100%{
+        transform: translate(0,-20px);
+    }
+}
+
+.bannerholder{
+    right:8%;
+    bottom:6%;
+    display:flex;
+    gap:8%;
+    z-index: 1;
+    transform: translate(-50%,0);
+    z-index: 2;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.banner{
+    position:relative;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.banner:hover{
+    transform: translate(0,-10px);
+    transition: 0.5s;
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.fade{
+    width:100%;
+    height:200px;
+    bottom:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
+    z-index: 1;
+    position: fixed;
+}
+
+t{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+t.sticky{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#fff 10%, transparent 11%),
+      radial-gradient(#fff 10%, transparent 11%);
+    background-size:30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.3;
+    rotate: 30deg;
+    left:50px;
+    top:80px;
+    background-repeat: repeat;
+    position: absolute;
+    z-index: 0;
+  }
+</style>

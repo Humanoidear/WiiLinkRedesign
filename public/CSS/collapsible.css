@@ -1,0 +1,58 @@
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+    border-radius: 8px;
+    margin-top:40px;
+    position: relative;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+    font-family: Gilroy;
+    transition: 0.5s;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+    transition: 0.5s;
+  }
+  
+  .content {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    top:5px;
+    border-radius: 8px ;
+    width: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+  }
+
+  p{
+    width:90%;
+    text-align: justify;
+    font-family: Gilroy;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+  }
+
+  .bg{
+    width:95%;
+    background-color: blue;
+    margin-top: 50px;
+    left:50%;
+    transform: translate(-50%,0);
+    border-radius: 15px;
+    position: relative;
+    padding-bottom:100px;
+    background-image:url("../Images/copyrightbg.png");
+    background-size: cover;
+  }

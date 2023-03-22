@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.18.2",
+    "@astrojs/rss": "^2.3.1",
+    "@astrojs/sitemap": "^1.2.1",
+    "accessible-astro-components": "^1.6.5",
+    "astro": "^2.1.5"
+  }
+}

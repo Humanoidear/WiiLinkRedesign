@@ -1,0 +1,199 @@
+@font-face {
+    font-family: Gilroy;
+    src: url(../Fonts/Gilroy.otf);
+}
+
+@font-face {
+    font-family: Rodin;
+    src: url(../Fonts/Rodin-Medium.otf);
+}
+
+@font-face {
+    font-family: Cafe;
+    src: url(../Fonts/CafeKr.ttf);
+}
+
+@font-face {
+    font-family: RubikBold;
+    src: url(../Fonts/Rubik-Bold.ttf);
+}
+
+@font-face {
+    font-family: RubikMedium;
+    src: url(../Fonts/Rubik-Medium.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background-color: #181818;
+}
+
+h1{
+    font-family:RubikMedium;
+    color:white;
+    font-size: 120px;
+    background: linear-gradient(150deg, rgba(27,143,161,1) 0%, rgba(32,213,136,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2{
+    font-family:Gilroy;
+    color:white;
+    font-size: 40px;
+}
+
+h3{
+    font-family: Cafe;
+    color:white;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+h4{
+    font-family: Cafe;
+    color:white;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+iframe{
+    border-radius: 18px;
+}
+
+r.sticky{
+    transform: translate(-50%,50px);
+    transition: 0.5s;
+    right:2%;
+}
+
+.contentholder{
+    width:100%;
+    left:0;
+    top:100%;
+    background-color: #161616;
+    padding-top:50px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: absolute;
+}
+
+.contentslogan{
+    text-align: center;
+}
+
+.fa-solid{
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+.ytvid{
+    box-shadow: 0px 0px 70px rgb(43, 43, 43);
+    top:50px;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+    width:80%;
+}
+
+.first{
+    width:100px;
+    height:100px;
+    position: absolute;
+    bottom:0px;
+    left:8%;
+    animation-name: downup;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes downup {
+    0%{
+        transform: translate(0, -20px);
+    }
+    50%{
+        transform: translate(0,0px);
+    }
+    100%{
+        transform: translate(0,-20px);
+    }
+}
+
+.bannerholder{
+    right:8%;
+    bottom:6%;
+    display:flex;
+    gap:8%;
+    z-index: 1;
+    transform: translate(-50%,0);
+    z-index: 2;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.banner{
+    position:relative;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.banner:hover{
+    transform: translate(0,-10px);
+    transition: 0.5s;
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.fade{
+    width:100%;
+    height:200px;
+    bottom:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
+    z-index: 1;
+    position: fixed;
+}
+
+t{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+t.sticky{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#fff 10%, transparent 11%),
+      radial-gradient(#fff 10%, transparent 11%);
+    background-size:30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.3;
+    rotate: 30deg;
+    left:50px;
+    top:80px;
+    background-repeat: repeat;
+    position: absolute;
+    z-index: 0;
+  }
