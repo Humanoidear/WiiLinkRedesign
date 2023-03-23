@@ -3,23 +3,106 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
-</header>
+
+
+<r class="bannerholder">
+	<div class="banner"><img src=" ../Images/home.png" width="60px"><div class="bannername">Home</div></div>
+	<div class="banner"><img src=" ../Images/news.png" width="60px"><div class="bannername">News</div></div>
+	<div class="banner"><img src=" ../Images/guide.png" width="60px"><div class="bannername">Guide</div></div>
+	<div class="banner"><img src=" ../Images/services.png" width="60px"><div class="bannername">Services</div></div>
+	<div class="banner"><img src=" ../Images/status.png" width="60px"><div class="bannername">Status</div></div>
+	<div class="banner"><img src=" ../Images/faq.png" width="60px"><div class="bannername">FAQ</div></div>
+	<div class="banner"><img src=" ../Images/donators.png" width="60px"><div class="bannername">Donators</div></div>
+</r>
+
+<t class="fade"></t>
+
+<script>
+	window.addEventListener("scroll", function() {
+var r = document.querySelector("r");
+r.classList.toggle("sticky", window.scrollY > 0);
+	})
+</script>
+	<script>
+		window.addEventListener("scroll", function() {
+	var t = document.querySelector("t");
+	t.classList.toggle("sticky", window.scrollY > 0);
+		})
+	</script>
+<script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+  content.style.display = "none";
+} else {
+  content.style.display = "block";
+}
+});
+}
+</script>
+
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+
+.bannerholder{
+    right:8%;
+    bottom:6%;
+    display:flex;
+    gap:8%;
+    transform: translate(-50%,0);
+    z-index: 80;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.banner{
+    position:relative;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.banner:hover{
+    transform: translate(0,-10px);
+    transition: 0.5s;
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.fade{
+    width:100%;
+    height:200px;
+    bottom:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
+    z-index: 1;
+    position: fixed;
+}
+
+t{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+t.sticky{
+    opacity: 1;
+    transition: 0.5s;
+}
 </style>

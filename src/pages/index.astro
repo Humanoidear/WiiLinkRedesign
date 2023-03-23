@@ -45,19 +45,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </div>
             <div class="first"><img src=" ./Images/downarrow.png" width="40px"></div>
 
-
-        <r class="bannerholder">
-            <div class="banner"><img src=" ./Images/home.png" width="60px"><div class="bannername">Home</div></div>
-            <div class="banner"><img src=" ./Images/news.png" width="60px"><div class="bannername">News</div></div>
-            <div class="banner"><img src=" ./Images/guide.png" width="60px"><div class="bannername">Guide</div></div>
-            <div class="banner"><img src=" ./Images/services.png" width="60px"><div class="bannername">Services</div></div>
-            <div class="banner"><img src=" ./Images/status.png" width="60px"><div class="bannername">Status</div></div>
-            <div class="banner"><img src=" ./Images/faq.png" width="60px"><div class="bannername">FAQ</div></div>
-            <div class="banner"><img src=" ./Images/donators.png" width="60px"><div class="bannername">Donators</div></div>
-        </r>
-
-        <t class="fade"></t>
-
         <div class="contentholder">
             <div class="polka-dot"></div>
 			
@@ -97,37 +84,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			<Footer />
     </body>
-
-    <script>
-        window.addEventListener("scroll", function() {
-    var r = document.querySelector("r");
-    r.classList.toggle("sticky", window.scrollY > 0);
-        })
-    </script>
-        <script>
-            window.addEventListener("scroll", function() {
-        var t = document.querySelector("t");
-        t.classList.toggle("sticky", window.scrollY > 0);
-            })
-        </script>
-    <script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
-    <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-    </script>
-
 </html>
 
 <style>
