@@ -20,13 +20,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         <link rel="stylesheet" href=" ./CSS/hero.css">
         <link rel="stylesheet" href=" ./CSS/collapsible.css">
         <link rel="stylesheet" href=" ./CSS/media.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     </head>
     <body>
         <div class="hero">
 
             <div class="herologoholder">
                 <div class="herologo">
-                    <h1 class="logo"><b style="font-family:RubikBold;">Wii</b>Link</h1>
+                    <h1 class="logo">Wii<b style="font-family:RubikMedium;">Link</b></h1>
                     <h2 class="tagline">A new online service for the Wii.</h2>
                 </div>
             </div>
@@ -81,6 +82,50 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
             <h2 class="fa-solid fa-clapperboard contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Promotional Video</d></h2>
             <div class="promotionalvideo"><iframe class="ytvid" width="560" height="760" src="https://www.youtube-nocookie.com/embed/Y8gSqBd4oT0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
+            <table id='table'>
+                <!-- HEADING FORMATION -->
+                <tr>
+                    <th>GFG UserHandle</th>
+                    <th>Practice Problems</th>
+                    <th>Coding Score</th>
+                    <th>GFG Articles</th>
+                </tr>
+      
+                <script>
+                    $(document).ready(function () {
+      
+                        // FETCHING DATA FROM JSON FILE
+                        $.getJSON("gfgdetails.json", 
+                                function (data) {
+                            var student = '';
+      
+                            // ITERATING THROUGH OBJECTS
+                            $.each(data, function (key, value) {
+      
+                                //CONSTRUCTION OF ROWS HAVING
+                                // DATA FROM JSON OBJECT
+                                student += '<tr>';
+                                student += '<td>' + 
+                                    value.GFGUserName + '</td>';
+      
+                                student += '<td>' + 
+                                    value.NoOfProblems + '</td>';
+      
+                                student += '<td>' + 
+                                    value.TotalScore + '</td>';
+      
+                                student += '<td>' + 
+                                    value.Articles + '</td>';
+      
+                                student += '</tr>';
+                            });
+                              
+                            //INSERTING ROWS INTO TABLE 
+                            $('#table').append(student);
+                        });
+                    });
+                </script>
 
 			<Footer />
     </body>
@@ -185,4 +230,40 @@ t.sticky{
     position: absolute;
     z-index: 0;
   }
+
+  table {
+            margin: 0 auto;
+            font-size: large;
+            background-color: white;
+            height:400px;
+            width:100%;
+            position: inherit;
+            border: 1px solid black;
+        }
+  
+        h1 {
+            text-align: center;
+            color: #006600;
+            font-size: xx-large;
+            font-family: 'Gill Sans', 
+                'Gill Sans MT', ' Calibri', 
+                'Trebuchet MS', 'sans-serif';
+        }
+  
+        td {
+            background-color: #E4F5D4;
+            border: 1px solid black;
+        }
+  
+        th,
+        td {
+            font-weight: bold;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+  
+        td {
+            font-weight: lighter;
+        }
 </style>

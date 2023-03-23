@@ -13,11 +13,9 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <body>
-	<Header />
 	<main>
+		<img src="../Images/newstop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;">
 		<section>
-			
-
 			{
 				posts.map((post) => (
 					<div class="mainpost">
@@ -47,13 +45,35 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</div>
+
+			<h2 style="margin-top:60px; left:10%; position:relative; width:50%;">Older posts</h2>
+
+			<div class="postholdermini">
+				<div class="polka-dot"></div>
+				{
+					posts.map((post) => (
+						<div class="postmini">
+							<a href={`/blog/${post.slug}/`}>
+							<div class="new">This just in!</div>
+							<div class="fade"></div>
+							<img src={post.data.heroImage} width="200px">
+							<FormattedDate date={post.data.pubDate} />
+							<div class="title">{post.data.title}</div>
+							<div class="desc">{post.data.description}</div>
+							</a>
+						</div>
+					))
+				}
+			</div>
 		</section>
+		<Footer />
 	</main>
 
 </body>
 
 
 <style>
+
 	.header{
 		left:5%;
 		width:900px;
@@ -106,8 +126,21 @@ const posts = (await getCollection('blog')).sort(
 		gap: 20px;
 		top:45%;
 		left:50%;
-		transform: translate(-50%,0);
-		background-color: #181818;
+		transform: translate(-50%,500px);
+		position: relative;
+		padding-bottom:500px;
+		z-index: 10;
+	}
+
+	.postholdermini{
+		width:80%;
+		display: grid;
+		grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+		position: absolute;
+		gap: 20px;
+		left:50%;
+		transform: translate(-50%,0px);
+		position: relative;
 		z-index: 10;
 	}
 	.post{
@@ -123,7 +156,37 @@ const posts = (await getCollection('blog')).sort(
     	transition: 0.5s;
 	}
 
+	.post:nth-child(n+7){
+		display:none;
+	}
+
+	.postmini:nth-child(n+8){
+		display:block;
+	}
+
+	.postmini{
+		position: relative;
+    	height:250px;
+    	width:100%;
+ 		background-color:rgba(255, 255, 255, 0.041);
+    	border-radius: 15px;
+		font-family: Gilroy;
+    	hyphens:auto;
+    	overflow: hidden;
+    	border: 3px solid rgba(255, 255, 255, 0.066);
+    	transition: 0.5s;
+		display:none;
+	}
+
 	.post:hover{
+    	background-color:rgba(206, 206, 206, 0.117);
+    	transform: translate(0,-5px);
+    	box-shadow: 0px 0px 70px rgb(43, 43, 43);
+    	transition: 0.5s;
+  	}
+
+
+	  .postmini:hover{
     	background-color:rgba(206, 206, 206, 0.117);
     	transform: translate(0,-5px);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
@@ -148,7 +211,7 @@ const posts = (await getCollection('blog')).sort(
 		position: absolute;
 		z-index: 11;
 		font-size: 60px;
-		top:40%;
+		top:200px;
 		text-align: center;
 		left: 50%;
 		transform: translate(-50%,0);
@@ -160,7 +223,7 @@ const posts = (await getCollection('blog')).sort(
 		position: absolute;
 		z-index: 11;
 		font-size: 30px;
-		top:54%;
+		top:300px;
 		text-align: center;
 		left: 50%;
 		transform: translate(-50%,0);
@@ -212,7 +275,6 @@ const posts = (await getCollection('blog')).sort(
 	.fade{
 		width:100%;
 		height:60%;
-
 		background: linear-gradient(0deg, rgba(24,24,24,1) 0%, rgba(0,212,255,0) 100%);
 		position: absolute;
 		z-index:2;
@@ -246,6 +308,11 @@ const posts = (await getCollection('blog')).sort(
 			opacity:1;
 		}
 	}
+}
+
+Footer{
+	position: relative;
+	bottom:0;
 }
 </style>
 
