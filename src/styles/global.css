@@ -65,7 +65,9 @@ iframe{
 }
 
 r.sticky{
-    transform: translate(-50%,50px);
+    backdrop-filter: blur(8px);
+    height:80px;
+    background: rgba(18, 18, 18, 0.932);
     transition: 0.5s;
     right:2%;
 }

@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Caroussel from '../components/Caroussel.astro';
 import Services from '../components/Services.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/HeaderMain.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -10,6 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!DOCTYPE html>
 <html lang="en-us">
+    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +24,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     </head>
     <body>
+        <Header/>
         <div class="hero">
-
+            <div class="topimg">
+                <img src="./Images/copyrightbg.png" width="100%">
+                <div class="fade"></div>
+            </div>
             <div class="herologoholder">
                 <div class="herologo">
                     <h1 class="logo">Wii<b style="font-family:RubikMedium;">Link</b></h1>
@@ -40,8 +45,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 </div>
                 <h3 class="readdocs"><u>Check out the guide</u></h3>
             </div>
-
-			<Caroussel />
           
             </div>
             <div class="first"><img src=" ./Images/downarrow.png" width="40px"></div>
@@ -133,6 +136,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 	
+.topimg{
+    width:100%;
+    top:0;
+    left:0;
+    overflow: hidden;
+    position:absolute;
+}
+
 .first{
     width:100px;
     height:100px;
@@ -197,22 +208,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 .fade{
     width:100%;
-    height:200px;
+    height:100%;
     bottom:0;
     left:0;
-    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
-    z-index: 1;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 80%);
+    z-index: 0;
     position: fixed;
-}
-
-t{
-    opacity: 0;
-    transition: 0.5s;
-}
-
-t.sticky{
-    opacity: 1;
-    transition: 0.5s;
 }
 
 .polka-dot {
