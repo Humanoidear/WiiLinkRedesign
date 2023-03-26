@@ -54,10 +54,9 @@ h3{
 }
 
 h4{
-    font-family: Gilroy;
+    font-family: Cafe;
     color:white;
     font-size: 20px;
-    opacity: 0.5;
 }
 
 iframe{
@@ -140,3 +139,90 @@ r.sticky{
     position: absolute;
     z-index: 0;
   }
+  
+  blockquote p {
+    padding: 15px;
+    background: #303030;
+    border:2px solid rgba(110, 110, 110, 0.211);
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    padding: 15px;
+    width:20px;
+    height:50px;
+    background: #303030;
+    border:2px solid rgba(110, 110, 110, 0.211);
+    border-radius: 5px;
+}
+
+pre,
+code {
+	color: #d4d4d4;
+	font-size: 14px;
+	font-family: Consolas;
+	line-height: 1.5;
+	direction: ltr;
+	white-space: pre;
+	text-align: left;
+	text-shadow: none;
+	word-break: normal;
+	word-spacing: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre::selection,
+code::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	pre,
+	code {
+		text-shadow: none;
+	}
+}
+
+pre {
+	margin: 0.5rem 0 16px;
+	padding: 0.8rem 1rem 0.9rem;
+	overflow: auto;
+	background: #282a36;
+	border-radius: 4px;
+}
+
+code {
+	padding: 0.1em 0.3em;
+	color: #ffffff;
+	background: #5b5b5b;
+	border-radius: 0.3em;
+	white-space: pre-wrap;
+}
+
+pre.astro-code > code {
+	all: unset;
+}
+
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+	position: relative;
+}
+
+pre > code {
+	position: relative;
+	z-index: 1;
+}
+
+img{
+    border-radius: 8px;
+}
+

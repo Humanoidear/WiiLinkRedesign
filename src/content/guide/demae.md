@@ -4,9 +4,6 @@ pubDate: "2021-01-29"
 description: "Lorem ipsum dolor sit amet"
  
 ---
-
-#### Written by [PablosCorner](https://github.com/PablosCorner) (Last updated: 3/10/2023)
-
 > **NOTE: You no longer need to pay $1 to get and use Food Channel (Domino's), it's completely *free!***
 
 > Food Channel (Domino's) currently is only available in the United States and Canada. More regions are being looked at and considered in the future. If you're outside the US or Canada, use **Food Channel (Standard)**.
@@ -67,3 +64,8 @@ Lastly, don't forget to set up your info with SPD, by selecting on `Change Addre
 ***Happy ordering!***
 
 > If you still encounter any issues using the channel, first look back at the guide and see if you missed anything, and if you still have any issues by then, please join our [Discord server](https://discord.gg/WiiLink) and create a support thread in the `dominos-support` forum.
+</br>
+
+___
+
+#### Written by [PablosCorner](https://github.com/PablosCorner) (Last updated: 3/10/2023)

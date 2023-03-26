@@ -11,6 +11,8 @@ type Props = CollectionEntry<'guide'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
+<html lang="en">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <body>
 	<main>
 		<div class="head">
@@ -28,9 +30,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</main>
 
 </body>
-
+</html>
 
 <style>
+
+pre {
+    padding: 0.8rem;
+    overflow: auto;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    border-radius: 0.3rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
 	a:link{
     color:rgba(32,213,136,1);  
 }
@@ -125,7 +137,7 @@ transition: 0.5s;
 	}
 
 	p{
-		font-family: Gilroy;
+		font-family: Cafe;
 		color:white;
 	}
 	h2{
@@ -198,14 +210,22 @@ transition: 0.5s;
 		left:50%;
 		transform: translate(-50%, 0);
 		position: absolute;
+		width:95%;
+		position:relative;
+		font-family: Cafe;
+		color:white;
+		margin-top:20px;
+		left:50%;
+		text-align: justify;
+		transform: translate(-50%, 0);
 	}
 
 	.guideholder{
-		width:70%;
+		width:75%;
 		height:90%;
 		bottom:0;
 		right:0;
-		background-color: rgba(36, 36, 36, 0.613);
+		background-color: rgba(39, 39, 39, 0.868);
 		backdrop-filter: blur(8px);
 		border-top-left-radius: 18px;
 		z-index: 1;
@@ -452,6 +472,12 @@ transition: 0.5s;
 Footer{
 	position: relative;
 	bottom:0;
+}
+
+blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
 }
 </style>
 
