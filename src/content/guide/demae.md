@@ -1,8 +1,6 @@
 ---
 title: Demae Channel (Food Channel)
 pubDate: "2021-01-29"
-description: "Lorem ipsum dolor sit amet"
- 
 ---
 > **NOTE: You no longer need to pay $1 to get and use Food Channel (Domino's), it's completely *free!***
 

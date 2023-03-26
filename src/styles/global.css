@@ -70,77 +70,8 @@ r.sticky{
     transition: 0.5s;
     right:2%;
 }
-
-.contentholder{
-    width:100%;
-    left:0;
-    top:100%;
-    background-color: #161616;
-    padding-top:50px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    position: absolute;
-}
-
-.contentslogan{
-    text-align: center;
-}
-
-.fa-solid{
-    left:50%;
-    transform: translate(-50%,0);
-}
-
-.ytvid{
-    box-shadow: 0px 0px 70px rgb(43, 43, 43);
-    top:50px;
-    left:50%;
-    transform: translate(-50%,0);
-    position: relative;
-    width:80%;
-}
-
-.first{
-    width:100px;
-    height:100px;
-    position: absolute;
-    bottom:0px;
-    left:8%;
-    animation-name: downup;
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-}
-
-@keyframes downup {
-    0%{
-        transform: translate(0, -20px);
-    }
-    50%{
-        transform: translate(0,0px);
-    }
-    100%{
-        transform: translate(0,-20px);
-    }
-}
-
-.polka-dot {
-    width: 240px;
-    height: 240px;
-    background-image: radial-gradient(#fff 10%, transparent 11%),
-      radial-gradient(#fff 10%, transparent 11%);
-    background-size:30px 30px;
-    background-position: 0 0, 30px 30px;
-    opacity: 0.3;
-    rotate: 30deg;
-    left:-100px;
-    top:-100px;
-    background-repeat: repeat;
-    position: absolute;
-    z-index: 0;
-  }
   
-  blockquote p {
+blockquote p {
     padding: 15px;
     background: #303030;
     border:2px solid rgba(110, 110, 110, 0.211);
@@ -210,9 +141,6 @@ pre.astro-code > code {
 	all: unset;
 }
 
-/*********************************************************
-* Line highlighting
-*/
 pre[data-line] {
 	position: relative;
 }
@@ -226,3 +154,44 @@ img{
     border-radius: 8px;
 }
 
+.fa-solid{
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+.ytvid{
+    box-shadow: 0px 0px 70px rgb(43, 43, 43);
+    top:50px;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+    width:80%;
+}
+
+@keyframes downup {
+    0%{
+        transform: translate(0, -20px);
+    }
+    50%{
+        transform: translate(0,0px);
+    }
+    100%{
+        transform: translate(0,-20px);
+    }
+}
+
+.polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#fff 10%, transparent 11%),
+      radial-gradient(#fff 10%, transparent 11%);
+    background-size:30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.3;
+    rotate: 30deg;
+    left:-100px;
+    top:-100px;
+    background-repeat: repeat;
+    position: absolute;
+    z-index: 0;
+  }

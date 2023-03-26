@@ -1,7 +1,6 @@
 ---
 title: Installation Guide
 pubDate: "2020-12-14"
-description: "Lorem ipsum dolor sit amet"
 ---
 ## What you need
 
