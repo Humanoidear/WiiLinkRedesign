@@ -4,6 +4,8 @@ import Caroussel from '../components/Caroussel.astro';
 import Services from '../components/Services.astro';
 import Header from '../components/HeaderMain.astro';
 import Footer from '../components/Footer.astro';
+import Members from '../components/Members.astro';
+import News from '../components/News.astro';
 import '../styles/global.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -21,11 +23,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         <link rel="stylesheet" href=" ./CSS/hero.css">
         <link rel="stylesheet" href=" ./CSS/collapsible.css">
         <link rel="stylesheet" href=" ./CSS/media.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     </head>
     <body>
         <Header/>
         <div class="hero">
+        <div class="parallaximpress">
+            <div class="parallax" id="scene">
+            <div class="channeltop" data-depth="0.3"  data-friction-x="1.5"> <img src="./Images/bgtop.png"></div>
+            <div class="channelmid" data-depth="0.1" data-friction-x="1.5"> <img src="./Images/bgmid.png"></div>
+            <div class="channelbot" data-depth="0.05" data-friction-x="1.5"> <img src="./Images/bgbot.png" style="bottom:0; position:absolute;"></div>
+            </div>
+        </div>
+
             <div class="topimg">
                 <img src="./Images/copyrightbg.png" width="100%">
                 <div class="fade"></div>
@@ -83,58 +92,185 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </div>
         </div>
 
-            <h2 class="fa-solid fa-clapperboard contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Promotional Video</d></h2>
-            <div class="promotionalvideo"><iframe class="ytvid" width="560" height="760" src="https://www.youtube-nocookie.com/embed/Y8gSqBd4oT0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Our <h7 style="color:green">Amazing</h7> Crew</d></h2>
+        <Members />
 
-            <table id='table'>
-                <!-- HEADING FORMATION -->
-                <tr>
-                    <th>GFG UserHandle</th>
-                    <th>Practice Problems</th>
-                    <th>Coding Score</th>
-                    <th>GFG Articles</th>
-                </tr>
-      
-                <script>
-                    $(document).ready(function () {
-      
-                        // FETCHING DATA FROM JSON FILE
-                        $.getJSON("gfgdetails.json", 
-                                function (data) {
-                            var student = '';
-      
-                            // ITERATING THROUGH OBJECTS
-                            $.each(data, function (key, value) {
-      
-                                //CONSTRUCTION OF ROWS HAVING
-                                // DATA FROM JSON OBJECT
-                                student += '<tr>';
-                                student += '<td>' + 
-                                    value.GFGUserName + '</td>';
-      
-                                student += '<td>' + 
-                                    value.NoOfProblems + '</td>';
-      
-                                student += '<td>' + 
-                                    value.TotalScore + '</td>';
-      
-                                student += '<td>' + 
-                                    value.Articles + '</td>';
-      
-                                student += '</tr>';
-                            });
-                              
-                            //INSERTING ROWS INTO TABLE 
-                            $('#table').append(student);
-                        });
-                    });
-                </script>
+            <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Newstand</d></h2>
+           <News />
+
+        <div class="roundcontainer">
+            <h2 class="contentslogan" style="top:28px; position: relative;"> <d style="font-family: Gilroy;"> Keep the groove going!</d></h2>
+            <div class="discordholder">
+                <div class="discordmessage">Keep up to date on all things WiiLink in our Discord server!</div>
+                <div class="discordjoinbutton">Jump in!</div>
+                </div>
+        </div>
 
 			<Footer />
+
+            <script>
+                import Parallax from "parallax-js";
+                var scene = document.getElementById('scene');
+                var parallaxInstance = new Parallax(scene);
+            </script>
     </body>
 </html>
 
 <style>
+    .hero{
+        width:100%;
+        height:100%;
+        overflow: hidden;
+    }
+
+    .parallaximpress{
+        width:1800px;
+        height:1000px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 1;
+    }
+
+    .parallax{
+        width:1800px;
+        height:1000px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .channeltop{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.5;
+        position:relative;
+        opacity:0;
+        animation-name: fadeintop;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+
+    .channelmid{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.3;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        animation-name: fadeinmid;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.4s;
+    }
+
+    .channelbot{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.1;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        animation-name: fadeinbot;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeintop{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes fadeinmid{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0.3;
+        }
+    }
+
+    @keyframes fadeinbot{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0.1;
+        }
+    }
+
+    .channel3{
+        width:370px;
+        height:190px;
+        left:80%;
+        top:50%;
+
+        background-color: white;
+    }
+
+    
+    .roundcontainer{
+        width:1000px;
+        height:250px;
+        left:50%;
+        margin-bottom:200px;
+        position: relative;
+        transform: translate(-50%, 200px);
+        background-color: #5865F2;
+        border-radius: 8px;
+    }
+
+    .discordholder{
+        width:80%;
+        height:100px;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, 0);
+        border-radius: 8px;
+        position: absolute;
+        background-color: #333dab;
+    }
+
+    .discordmessage{
+        top:50%;
+        left:20px;
+        color:white;
+        font-size:20px;
+        font-family: Gilroy;
+        position: absolute;
+        transform: translate(0, -50%);
+    }
+
+    .discordjoinbutton{
+        right:20px;
+        top:50%;
+        transform: translate(0%,-50%);
+        height:70px;
+        width:200px;
+        text-align: center;
+        text-transform:uppercase;
+        font-family: Gilroy;
+        font-size: 30px;
+        color:white;
+        background-color: #5865F2;
+        vertical-align: middle;
+        line-height: 70px; 
+        border-radius: 8px;
+        position: absolute;
+
+    }
 	
 .topimg{
     width:100%;
@@ -231,40 +367,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     position: absolute;
     z-index: 0;
   }
-
-  table {
-            margin: 0 auto;
-            font-size: large;
-            background-color: white;
-            height:400px;
-            width:100%;
-            position: inherit;
-            border: 1px solid black;
-        }
-  
-        h1 {
-            text-align: center;
-            color: #006600;
-            font-size: xx-large;
-            font-family: 'Gill Sans', 
-                'Gill Sans MT', ' Calibri', 
-                'Trebuchet MS', 'sans-serif';
-        }
-  
-        td {
-            background-color: #E4F5D4;
-            border: 1px solid black;
-        }
-  
-        th,
-        td {
-            font-weight: bold;
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
-  
-        td {
-            font-weight: lighter;
-        }
 </style>

@@ -14,8 +14,9 @@
     "@astrojs/rss": "^2.3.1",
     "@astrojs/sitemap": "^1.2.1",
     "accessible-astro-components": "^1.6.5",
-    "astro": "^2.1.5",
+    "astro": "^2.1.7",
     "jquery-parallax.js": "^1.5.0",
+    "parallax-js": "^3.1.0",
     "scss": "^0.2.4"
   }
 }

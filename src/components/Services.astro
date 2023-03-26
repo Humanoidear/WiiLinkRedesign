@@ -70,7 +70,7 @@ const posts = (await getCollection('services'));
     .itineraries{
         width: 80%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 30px;
         left:50%;
         transform: translate(-50%,0);
@@ -79,7 +79,7 @@ const posts = (await getCollection('services'));
     
     .itn{
         position: relative;
-        height:250px;
+        height:200px;
         width:100%;
         background-color:rgba(255, 255, 255, 0.041);
         border-radius: 15px;
@@ -225,21 +225,27 @@ const posts = (await getCollection('services'));
     .itnhead{
         right:20px;
         top:0%;
+        font-size: 30px;
         position: absolute;
     }
     
     .itndesc{
-        width:55%;
+        width:60%;
         right:20px;
-        top:40%;
+        top:70px;
         text-align: right;
         position: absolute;
-        font-size: 23px;
+        font-size: 20px;
+        -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     }
     
     .itnjpn{
         right:20px;
         top:20%;
+        font-size:15px;
         position: absolute;
     }
 </style>
