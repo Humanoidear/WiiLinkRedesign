@@ -8,9 +8,9 @@ import { SITE_TITLE } from '../consts';
 <r class="bannerholder">
 	<a href="../"><img class="logo" src=" ../../Images/Wii_Link_Logo.png" width="200px"></a>
 	<ul>
-	<div class="banner"> Home</div>
+	<a href="/"><div class="banner"> Home</div></a>
 	<a href="../blog"><div class="banner"> News</div></a>
-	<div class="banner"> Guide</div>
+	<a href="../guide/welcome"><div class="banner"> Guide</div></a>
 	<div class="banner"> Services</div>
 	<div class="banner"> Status</div>
 	<div class="banner"> FAQ</div>
@@ -79,6 +79,7 @@ a:visited{
 	left:8%;
 	transform:translate(0%,-100%);
 	opacity:0;
+	z-index: 0;
 	position: absolute;
 	transition: 0.5s;
 }
@@ -118,11 +119,12 @@ ul{
 	padding-left:10px;
 	padding-right:10px;
 	border-radius: 18px;
-	transform: translate(-10px, -5px);
+	border:2px solid rgb(62, 161, 85);
+	transform: translate(-8px, -7px);
 }
 
 .strong:hover{
-	background: rgba(255, 0, 0, 0.789);
+	background: rgb(62, 161, 85);
 }
 
 .bannername{

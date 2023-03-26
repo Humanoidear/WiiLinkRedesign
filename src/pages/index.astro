@@ -36,7 +36,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div>
 
             <div class="topimg">
-                <img src="./Images/copyrightbg.png" width="100%">
+                <img class="image" src="./Images/copyrightbg.png" width="100%">
                 <div class="fade"></div>
             </div>
             <div class="herologoholder">
@@ -140,6 +140,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         z-index: 1;
     }
 
+    .image{
+        object-fit: cover;
+    }
+
     .channeltop{
         width:100%;
         height:100%;
@@ -187,27 +191,33 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     @keyframes fadeintop{
         0%{
             opacity: 0;
+            scale: 90%;
         }
         100%{
             opacity: 0.5;
+            scale: 100%;
         }
     }
 
     @keyframes fadeinmid{
         0%{
             opacity: 0;
+            scale: 90%;
         }
         100%{
             opacity: 0.3;
+            scale: 100%;
         }
     }
 
     @keyframes fadeinbot{
         0%{
             opacity: 0;
+            scale: 90%;
         }
         100%{
             opacity: 0.1;
+            scale: 100%;
         }
     }
 
