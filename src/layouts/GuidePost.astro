@@ -96,11 +96,14 @@ a:visited{
 		left:50%;
 		text-align: justify;
 		transform: translate(-50%, 0);
+		animation-name: fadeup;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
 	}
 
 	.guideholder{
 		width:75%;
-		height:90%;
+		height:88%;
 		bottom:0;
 		right:0;
 		background-color: rgba(39, 39, 39, 0.868);
@@ -109,6 +112,17 @@ a:visited{
 		z-index: 1;
 		overflow: scroll;
 		position: absolute;
+	}
+
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(-50%, 28px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(-50%, 0px);
+		}
 	}
 
 	a{

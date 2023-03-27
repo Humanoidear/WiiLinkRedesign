@@ -35,7 +35,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div>
 
         <div class="topimg">
-            <img class="image" src="./Images/copyrightbg.png" width="100%" style="opacity:0.8;">
+            <img class="image" src="./Images/copyrightbg.png" width="100%" style="opacity:0.4;">
             <div class="fade"></div>
         </div>
 
@@ -58,9 +58,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     
     <div class="rate">This site is in BETA, rate it!</div>
 
-            <div class="first"><img src=" ./Images/downarrow.png" width="40px"></div>
+            <a href="#start"><div class="first"><img src=" ./Images/downarrow.png" width="40px"></div></a>
 
-        <div class="contentholder">
+        <div class="contentholder" id="start">
             <div class="polka-dot"></div>
             <h2 class="contentslogan"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
             <Services />
@@ -96,11 +96,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                         <p>Yes!</p>
                     </div>
                 </div>
-                    <h3 style="text-align: center; top:20px; position: relative; left:50%; transform:translate:(-50%, 0);">Any other questions? If so, be sure to read our full FAQ!</h3>
+                    <h3 class="visitfaq" style="text-align: center; top:20px; position: relative; left:50%; transform:translate:(-50%, 0);">Any other questions? If so, be sure to read our full FAQ!</h3>
             </div>
         </div>
 
-        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Our <h7 style="color:green">Amazing</h7> Crew</d></h2>
+        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Our <h7 style="color:#1aa33a">Amazing</h7> Crew</d></h2>
         <Members />
 
         <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Newstand</d></h2>
@@ -119,6 +119,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 
 <style>
+    .logo{
+        left:0px;
+    }
+
     .hero{
         width:100%;
         height:100%;
@@ -257,6 +261,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     animation-duration: 5s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
+    z-index: 10;
 }
 
 @keyframes downup {
@@ -314,7 +319,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     height:100%;
     bottom:0;
     left:0;
-    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 80%);
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 40%);
     z-index: 0;
     position: fixed;
 }
@@ -346,5 +351,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     padding-right: 15px;
     border-radius: 8px;
     position: absolute;
+  }
+
+  @media (max-width:1000px) {
+    .parallaximpress{
+        top:50%;
+        left:50%;
+        position: absolute;
+        scale:80%;
+        transform: translate(-50%, -50%);
+    }
   }
 </style>

@@ -85,4 +85,22 @@ const posts = (await getCollection('members'));
         transform: translate(0, -50%);
         position: absolute;
     }
+
+	@media (max-width:1000px) {
+		.title{
+			display: none;
+		}
+		.desc{
+			display: none;
+		}
+		.member{
+		position: relative;
+    	height:100px;
+    	width:100px;
+	}
+		.memberholder{
+			display: grid;
+		grid-template-columns:repeat(auto-fit, minmax(100px, 100px));
+		}
+	}
 </style>

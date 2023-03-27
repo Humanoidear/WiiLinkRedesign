@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import '../styles/global.css';
 const posts = (await getCollection('services'));
+import '../styles/global.css';
 ---
 
 <div class="itineraries">  
@@ -230,16 +231,13 @@ const posts = (await getCollection('services'));
     }
     
     .itndesc{
-        width:60%;
+        display:block;
+        bottom:-5px;
         right:20px;
-        top:70px;
-        text-align: right;
+        width:70%;
+        text-align:justify;
         position: absolute;
         font-size: 20px;
-        -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
     }
     
     .itnjpn{
@@ -248,4 +246,159 @@ const posts = (await getCollection('services'));
         font-size:15px;
         position: absolute;
     }
+
+    @media (max-width:1000px) {
+    .herologoholder{
+        left:0;
+        width:100%;
+    }
+    .herologo{
+        top:10%;
+        width:100%;
+        text-align: center;
+        position: absolute;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+
+    .parallaximpress{
+        scale: 60%;
+        left:50%;
+        position: absolute;
+    }
+
+    .collapsibles{
+        width:100%;
+        left:0;
+        top:20px;
+        position: absolute;
+        overflow:hidden;
+        display: block;
+    }
+
+    .faqholder{
+        width:100%;
+    }
+
+    .collapsible{
+        width:100%;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .visitfaq{
+        left:0;
+        width:100%;
+        position: absolute;
+    }
+
+    .logo{
+        width:100%;
+        text-align: center;
+    }
+
+    .topimg{
+        width:100%;
+        height: 100%;
+    }
+
+    .image{
+        background-size: cover;
+        width:100%;
+        height:100%;
+    }
+
+    .heroinstallholder{
+        right:0%;
+        top:60%;
+        width:100%;
+        height:130px;
+        position: absolute;
+
+    }
+    .heroinstall{
+        width:90%;
+        left:50%;
+        transform: translate(-50%,0);
+        top:0;
+        position: absolute;
+    }
+    .readdocs{
+        text-align: center;
+        left:0;
+        bottom:30px;
+    }
+    .bannerholder{
+        display:none;
+    }
+    .collapsibles{
+        width:95%;
+        left:50%;
+        transform: translate(-50%,0);
+        position: relative;
+    }
+    .collapsible{
+        width:100%;
+    }
+    .promotionalvideo{
+        width:100%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    .ytvid{
+        width:95%;
+        height:240px;
+    }
+    .content{
+        width:100%;
+    }
+    .contentslogan{
+        font-size: 25px;
+    }
+    .itineraries{
+        width: 100%;
+        gap: 30px;
+        left:50%;
+        transform: translate(-50%,0);
+        position: relative;
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .itn{
+        height:100px;
+        width:100%;
+    }
+
+    .itnbg{
+        top:-40px;
+        height:400px;
+    }
+
+    .itnhead{
+        font-size:25px;
+    }
+    .itnjpn{
+        top:40%;
+        position: absolute;
+    }
+    .itndesc{
+        display:none;
+    }
+    .copydesc{
+        display:none;
+    }
+    .copytext{
+        bottom:30%;
+        left:0%;
+        width:45%;
+    }
+    .socials{
+        bottom: 20%;
+        left:3%;
+        gap:10px;
+    }
+}
 </style>
