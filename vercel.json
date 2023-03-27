@@ -1,7 +1,0 @@
-{
-    "build": {
-      "rollupOptions": {
-        "external": ["news-post", "lodash"]
-      }
-    }
-  }
