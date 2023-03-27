@@ -1,6 +1,6 @@
 ---
 memName: Giustino
 memDesc: "Developer"
-memImage: "https://github.com/ed0nkey.png"
+memImage: "https://i.imgur.com/tbPj3GA.png"
 memHub: "https://example.com"
 ---
