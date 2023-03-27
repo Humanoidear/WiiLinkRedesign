@@ -6,6 +6,7 @@ import Header from '../components/HeaderMain.astro';
 import Footer from '../components/Footer.astro';
 import Members from '../components/Members.astro';
 import News from '../components/News.astro';
+import Donators from '../components/Donators.astro'
 import '../styles/global.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -34,7 +35,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div>
 
         <div class="topimg">
-            <img class="image" src="./Images/copyrightbg.png" width="100%">
+            <img class="image" src="./Images/copyrightbg.png" width="100%" style="opacity:0.8;">
             <div class="fade"></div>
         </div>
 
@@ -55,6 +56,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </div>
     </div>
     
+    <div class="rate">This site is in BETA, rate it!</div>
+
             <div class="first"><img src=" ./Images/downarrow.png" width="40px"></div>
 
         <div class="contentholder">
@@ -95,13 +98,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Newstand</d></h2>
         <News />
 
-        <div class="roundcontainer">
-            <h2 class="contentslogan" style="top:28px; position: relative;"> <d style="font-family: Gilroy;"> Keep the groove going!</d></h2>
-            <div class="discordholder">
-                <div class="discordmessage">Keep up to date on all things WiiLink in our Discord server!</div>
-                <div class="discordjoinbutton">Jump in!</div>
-            </div>
-        </div>
+        <Donators />
 
 			<Footer />
 
@@ -135,6 +132,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 .contentslogan{
     text-align: center;
+    z-index: 2;
 }
 
     .parallaximpress{
@@ -234,57 +232,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             scale: 100%;
         }
     }
-    
-    .roundcontainer{
-        width:1000px;
-        height:250px;
-        left:50%;
-        margin-bottom:200px;
-        position: relative;
-        transform: translate(-50%, 200px);
-        background-color: #5865F2;
-        border-radius: 8px;
-    }
-
-    .discordholder{
-        width:80%;
-        height:100px;
-        top:40%;
-        left:50%;
-        transform: translate(-50%, 0);
-        border-radius: 8px;
-        position: absolute;
-        background-color: #333dab;
-    }
-
-    .discordmessage{
-        top:50%;
-        left:20px;
-        color:white;
-        font-size:20px;
-        font-family: Gilroy;
-        position: absolute;
-        transform: translate(0, -50%);
-    }
-
-    .discordjoinbutton{
-        right:20px;
-        top:50%;
-        transform: translate(0%,-50%);
-        height:70px;
-        width:200px;
-        text-align: center;
-        text-transform:uppercase;
-        font-family: Gilroy;
-        font-size: 30px;
-        color:white;
-        background-color: #5865F2;
-        vertical-align: middle;
-        line-height: 70px; 
-        border-radius: 8px;
-        position: absolute;
-
-    }
 	
 .topimg{
     width:100%;
@@ -380,5 +327,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     background-repeat: repeat;
     position: absolute;
     z-index: 0;
+  }
+
+  .rate{
+    bottom:20px;
+    right:20px;
+    background-color: green;
+    color:white;
+    font-family: Cafe;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    position: absolute;
   }
 </style>

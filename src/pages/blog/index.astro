@@ -94,6 +94,10 @@ const posts = (await getCollection('blog')).sort(
 		height:60%;
 		top:0;
 		left:0;
+		opacity: 0;
+		animation-name: fadeup;
+		animation-duration:0.5s;
+		animation-fill-mode:forwards;
 		position: absolute;
 		overflow:hidden;
 	}
@@ -142,7 +146,12 @@ const posts = (await getCollection('blog')).sort(
     	hyphens:auto;
     	overflow: hidden;
     	border: 3px solid rgba(255, 255, 255, 0.066);
+		opacity:0;
     	transition: 0.5s;
+		animation-name: fadeup;
+		animation-duration:0.5s;
+		animation-fill-mode:forwards;
+		animation-delay:0.22s;
 	}
 
 	.post:nth-child(n+7){
@@ -286,9 +295,11 @@ const posts = (await getCollection('blog')).sort(
 	@keyframes fadeup{
 		0%{
 			opacity:0;
+			transform: translate(0, -20px);
 		}
 		100%{
 			opacity:1;
+			transform: translate(0, 0px);
 		}
 	}
 }
