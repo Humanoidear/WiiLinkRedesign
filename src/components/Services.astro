@@ -9,7 +9,7 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn1"></div>
         <img class="itnimg" style="width:50%;" src=" ./Images/wiiroomicon.png">
-        <img class="itnimg2" src=" ./Images/wiinomaicon.png">  
+        <img class="itnimg2" src=" ./Images/wiinomaicon.svg">  
         <h2 class="itnhead">Wii Room</h2>
         <h4 class="itnjpn">Wii no Ma</h4>
         <h3 class="itndesc">Watch new videos with Wii Room, a unique take on video on-demand.</h3>
@@ -18,7 +18,7 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn2"></div>
         <img class="itnimg" src=" ./Images/digicamicon.png"> 
-        <img class="itnimg2" src=" ./Images/digicapicon2.png">      
+        <img class="itnimg2" src=" ./Images/digicapicon2.svg">      
         <h2 class="itnhead">Photo Print Channel</h2>
         <h4 class="itnjpn">Digicam Print Channel</h4>
         <h3 class="itndesc">Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.</h3>
@@ -27,7 +27,7 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn3"></div>
         <img class="itnimg" src=" ./Images/kirbytvicon.png">
-        <img class="itnimg2" src=" ./Images/krbtvicon.png">  
+        <img class="itnimg2" src=" ./Images/krbtvicon.svg">  
         <h2 class="itnhead">Kirby TV Channel</h2>
         <h3 class="itndesc">Watch the original Kirby anime right from your Wii with the Kirby TV Channel.</h3>
     </div>
@@ -35,7 +35,7 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn4"></div>
         <img class="itnimg" src=" ./Images/damaeicon.png">
-        <img class="itnimg2" src=" ./Images/demaeicon.png">
+        <img class="itnimg2" src=" ./Images/demaeicon.svg">
         <h2 class="itnhead">Food Channel</h2>
         <h4 class="itnjpn">Demae Channel</h4>
         <h3 class="itndesc">Order food with the Food Channel and bring tasty goodness straight to your house.</h3>
@@ -44,7 +44,7 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn5"></div>
         <img class="itnimg" src=" ./Images/weatherbg.png">
-        <img class="itnimg2" src=" ./Images/forecasticon.png">  
+        <img class="itnimg2" src=" ./Images/forecasticon.svg">  
         <h2 class="itnhead">Forecast Channel</h2>
         <h3 class="itndesc">Check the weather right on your Wii, and plan your attire in accordingly.</h3>
     </div>
@@ -52,15 +52,15 @@ import '../styles/global.css';
     <div class="itn">
         <div class="itnbg itn6"></div>
         <img class="itnimg" src=" ./Images/ntdochannelbg.png">
-        <img class="itnimg2" src=" ./Images/ntdoicon.png">  
+        <img class="itnimg2" src=" ./Images/ntdoicon.svg">  
         <h2 class="itnhead">Nintendo Channel</h2>
-        <h3 class="itndesc">Vatch all sorts of trailers, promos, and shows all from one interface.</h3>
+        <h3 class="itndesc">Watch all sorts of trailers, promos, and shows all from one interface.</h3>
     </div>
 
     <div class="itn">
         <div class="itnbg itn7"></div>
         <img class="itnimg" src=" ./Images/tvtomobg.png">
-        <img class="itnimg2" src=" ./Images/tvnotomoicon.png">
+        <img class="itnimg2" src=" ./Images/tvnotomoicon.svg">
         <h2 class="itnhead">TV Guide Channel</h2>
         <h4 class="itnjpn">Terebi no Tomo Channel</h4>
         <h3 class="itndesc">Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!</h3>
@@ -119,7 +119,14 @@ import '../styles/global.css';
         transition: 0.5s;
       }
     
-    
+    .itn:hover .itnbg{
+        width:60%;
+    }
+
+    .itn:hover .itnimg2{
+        opacity:0.3;
+        transform: translate(0px, 0);
+    }
     
     .itnimg{
         width:45%;
@@ -138,13 +145,11 @@ import '../styles/global.css';
         right:-20px;
         top:50%;
         left:7%;
-        z-index: 1;
-        transform: translate(0,-50%);
+        z-index: 0;
+        opacity: 0;
+        transform: translate(-20px,-50%);
         position: absolute;
         transition:0.5s;
-        filter:drop-shadow(3px 3px 0 white) 
-        drop-shadow(-3px -3px 0 white);
-        display:none;
     }
     
     .itninfo{
@@ -166,7 +171,7 @@ import '../styles/global.css';
     }
     
     .itnbg{
-        width:60%;
+        width:30%;
         height:130%;
         rotate: 6deg;
         top:-10%;
@@ -227,16 +232,17 @@ import '../styles/global.css';
         right:20px;
         top:0%;
         font-size: 30px;
-        position: absolute;
+        text-align: right;
+        position: relative;
     }
     
     .itndesc{
         display:block;
-        bottom:-5px;
         right:20px;
-        width:70%;
-        text-align:justify;
-        position: absolute;
+        width:90%;
+        left:6%;
+        text-align:right;
+        position: relative;
         font-size: 20px;
     }
     
