@@ -35,7 +35,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div>
 
         <div class="topimg">
-            <img class="image" src="./Images/copyrightbg.png" width="100%" style="filter:brightness(0.8);">
             <div class="fade"></div>
         </div>
 
@@ -245,7 +244,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     }
 	
 .topimg{
+    background-image: url("./Images/copyrightbg.png");
+    background-size:cover;
+    object-fit: cover;
     width:100%;
+    height:100%;
     top:0;
     left:0;
     overflow: hidden;
@@ -318,10 +321,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .fade{
     width:100%;
     height:100%;
-    bottom:130px;
+    bottom:0;
     left:0;
     background: linear-gradient(180deg, rgba(255,227,156,0) 80%, rgba(24,24,24,1) 100%);
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     opacity:0;
 }
