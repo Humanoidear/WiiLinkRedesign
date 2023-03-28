@@ -6,7 +6,7 @@ const today = new Date();
 	<div class="copyright">
 		<img class="copyimg" src="../../Images/wiimotes_logo.png">
 		<h3 class="copydesc">WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!</h3>
-		<h2 class="copytext"> <d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></br><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> Team</h2>
+		<h2 class="copytext"> <b style="font-family:RubikBold">Wii</b><b style="font-family:RubikMedium">Link</b> Team </br><d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></h2>
 		<div class="socials">
 			<img class="social" src="../../Images/github.svg">
 			<img class="social" src="../../Images/discord.svg">
@@ -31,11 +31,10 @@ const today = new Date();
 }
 
 .copytext{
-    bottom:0;
-    right:0;
     transform: translate(-100%,0);
 	font-family:Gilroy;
-    right:250px;
+    bottom:0;
+    right:170px;
     font-size: 30px;
     position: absolute;
     text-align: right;
