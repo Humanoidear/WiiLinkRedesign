@@ -1,12 +1,6 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import '../styles/global.css';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-
 const posts = (await getCollection('blog')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -247,9 +241,10 @@ const posts = (await getCollection('blog')).sort(
 	}
 }
 
-Footer{
-	position: relative;
-	bottom:0;
+@media (max-width:1000px) {
+	.postholder{
+		width:100%;
+	}
 }
 </style>
 

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 export interface Props {
-	date: Date;
+date: Date;
 }
 
 const { date } = Astro.props;
@@ -15,10 +15,11 @@ const { date } = Astro.props;
 			day: 'numeric',
 		})
 	}
+	
 </time>
 
 <style>
-		time{
+	time{
 		position: absolute;
 		font-family:Cafe;
 		color:white;

@@ -181,19 +181,3 @@ img{
         transform: translate(0,-20px);
     }
 }
-
-.polka-dot {
-    width: 240px;
-    height: 240px;
-    background-image: radial-gradient(#fff 10%, transparent 11%),
-      radial-gradient(#fff 10%, transparent 11%);
-    background-size:30px 30px;
-    background-position: 0 0, 30px 30px;
-    opacity: 0.3;
-    rotate: 30deg;
-    left:-100px;
-    top:-100px;
-    background-repeat: repeat;
-    position: absolute;
-    z-index: 0;
-  }
