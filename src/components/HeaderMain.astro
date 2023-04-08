@@ -1,6 +1,11 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import { LanguageSelector } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 ---
 
 
@@ -8,15 +13,15 @@ import { SITE_TITLE } from '../consts';
 <r class="bannerholder">
 	<a href="../"><img class="logo" src=" ../../Images/Wii_Link_Logo.png" width="200px"></a>
 	<ul>
-	<a href="/"><div class="banner"> Home</div></a>
-	<a href="../blog"><div class="banner"> News</div></a>
-	<a href="../guide/welcome"><div class="banner"> Guide</div></a>
-	<div class="banner"> Status</div>
-	<a href="/guide/faq"><div class="banner"> FAQ</div></a>
-	<div class="banner strong"> Install now</div>
-</ul>
-<img class="donate" src=" ../../Images/patreon.svg" width="30px">
-<img class="langswitch" src=" ../../Images/langswitcher.png" width="30px">
+	<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
+	<a href={localizePath("/blog")}><div class="banner">{t("header.news")}</div></a>
+	<a href={localizePath("/guide/1welcome")}><div class="banner">{t("header.guide")}</div></a>
+	<a href={localizePath("/status")}><div class="banner">{t("header.status")}</div></a>
+	<a href={localizePath("/guide/4faq")}><div class="banner">{t("header.faq")}</div></a>
+	<div class="banner strong">{t("header.install")}</div>
+	</ul>
+<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px"></a>
+<LanguageSelector showFlag={true} class="lang" />
 </r>
 
 
@@ -27,29 +32,8 @@ var r = document.querySelector("r");
 r.classList.toggle("sticky", window.scrollY > 500);
 	})
 </script>
-	<script>
-		window.addEventListener("scroll", function() {
-	var t = document.querySelector("t");
-	t.classList.toggle("sticky", window.scrollY > 0);
-		})
-	</script>
 <script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.display === "block") {
-  content.style.display = "none";
-} else {
-  content.style.display = "block";
-}
-});
-}
-</script>
 
 <style>
 
@@ -84,12 +68,9 @@ a:visited{
 	transition: 0.5s;
 }
 
-.langswitch{
-	top:50%;
-	right:8%;
-	transform: translate(0,-50%);
-	filter: invert(1) opacity(0.7);
-	position: absolute;
+.lang:hover{
+	filter:opacity(1);
+	transition: 0.2s;
 }
 
 .donate{
@@ -98,6 +79,12 @@ a:visited{
 	transform: translate(0,-50%);
 	filter: invert(1) opacity(0.7);
 	position: absolute;
+	transition: 0.2s;
+}
+
+.donate:hover{
+	filter: invert(39%) sepia(54%) saturate(2336%) hue-rotate(332deg) brightness(82%) contrast(111%);
+	transition: 0.2s;
 }
 
 ul{
@@ -181,4 +168,36 @@ r.sticky ul{
 	transform: translate(-50%, -50%);
 	transition: 0.5s;
 }
+.lang{
+    top:50%;
+	right:8%;
+	transform: translate(0,-50%);
+    background-image: url("../../Images/langswitcher.png");
+    background-size: cover;
+    background-color: rgba(255, 255, 0, 0);
+    color:green;
+    font-family:Cafe;
+	filter: opacity(0.7);
+    border: 0px;
+    width:35px;
+    height:35px;
+    z-index: 100000000;
+    position: absolute;
+	transition:0.2s;
+}
+
+img{
+	border-radius: 0px;
+}
+
+@media (min-width:2000px) {
+		.bannerholder{
+			width:2000px;
+			left:50%;
+			top:0px;
+			transform: translate(-50%, 0);
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+			position: fixed;
+	}
 </style>
